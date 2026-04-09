@@ -1,0 +1,555 @@
+# Jean M. Maupas — Resume
+# Schema: JSON Resume v1.0.0 (jsonresume.org/schema) + maupas-cv-extensions v1
+#
+# Extensions over JSON Resume:
+#   meta.profiles[]          — named job-profile definitions with display label
+#   basics.summaries[]       — per-profile summary text, replaces basics.summary
+#   work[].url               — company website (not in base schema)
+#   work[].highlights[]      — changed from string[] to {text, tags[]}
+#   skills[].tags[]          — which job profiles this skill group belongs to
+#   education[].url          — institution website
+#
+# Profile identifiers (tags):
+#   clinical_research        — Clinical data management, biometrics, submissions
+#   data_science             — Statistical programming, R/Python, visualisation
+#   software_engineering     — SDLC, APIs, system development, coding
+#   information_systems      — IS architecture, EDC/CTMS integration, business analysis
+
+meta:
+  schemaVersion: "jsonresume-maupas-v1"
+  lastUpdated: "2025-04"
+  profiles:
+    - id: clinical_research
+      label: "Clinical DATA Management, Programming & Analysis"
+    - id: data_science
+      label: "Clinical and DATA Science, Programming & Analysis"
+    - id: software_engineering
+      label: "Clinical Data Science, Engineering & Systems"
+    - id: information_systems
+      label: "Information Systems Architecture & Engineering"
+
+# ─── BASICS ──────────────────────────────────────────────────────────────────
+
+basics:
+  name: "Jean M. Maupas"
+  suffix: "MS, MD"
+  email: "Jean.Maupas@gmail.com"
+  phone: "+1-323-496-8496"
+  url: "https://maupas.org"
+  location:
+    city: "Los Gatos"
+    region: "California"
+    countryCode: "US"
+  profiles:
+    - network: "LinkedIn"
+      username: "maupas"
+      url: "https://www.linkedin.com/in/maupas/"
+    - network: "Google Scholar"
+      username: "Jean M. Maupas"
+      url: "https://scholar.google.com/citations?hl=en&user=DiQ6YWEAAAAJ"
+      note: "30 articles and conference presentations, cited 393 times"
+
+  # Multiple summaries keyed to job profiles
+  summaries:
+    - tags: [clinical_research]
+      text: >
+        Specialist in Clinical Data Management, data science, data analysis and
+        visualisation, in senior and managerial positions, for various organisations
+        including device and pharmaceutical companies, CROs, and academic centres.
+        Overall comprehensive understanding of the clinical research process from
+        protocol to submission and publication. Deep knowledge of ICH, 21 CFR Part 11,
+        EUdract Annex 11, ADaM, SDTM, and CDASH CDISC standards.
+        SDTM certification passed January 2021.
+        30 peer-reviewed articles and conference presentations, cited 393 times.
+
+    - tags: [data_science]
+      text: >
+        Clinical research, data science, clinical and statistical programming,
+        data management, reporting, visualisation and analysis in senior and managerial
+        positions, for device and pharmaceutical companies, CROs, and academic centres.
+        Overall comprehensive understanding of the clinical research process from protocol
+        to submission and publication. Deep knowledge of ICH, 21 CFR Part 11,
+        EUdract Annex 11, ADaM, SDTM, and CDASH CDISC standards.
+        SDTM certification passed January 2021.
+        30 peer-reviewed articles and conference presentations, cited 393 times.
+
+    - tags: [software_engineering, information_systems]
+      text: >
+        Business analysis, data and systems engineering, data science, clinical and
+        statistical programming, data management, reporting, visualisation and analysis
+        in senior and managerial positions, for device and pharmaceutical companies,
+        CROs, and academic centres.
+        Deep knowledge of ICH, 21 CFR Part 11, EUdract Annex 11, ADaM, SDTM, and
+        CDASH CDISC standards. SDTM certification passed January 2021.
+
+# ─── COMPETENCY AREAS  (used in profile section of CV) ──────────────────────
+
+competencies:
+  - area: "Clinical Science"
+    tags: [clinical_research, data_science]
+    highlights:
+      - text: "Protocol and study document generation and review"
+        tags: [clinical_research, data_science]
+      - text: "Data analysis for abstracts, posters, and scientific articles; presentation to stakeholders"
+        tags: [clinical_research, data_science]
+      - text: "Statistical programming and generation of TLFs for FDA, TPD and EMEA submissions following CDISC/SDTM & ADaM (NDA 505b1, 505b2, and ANDA)"
+        tags: [clinical_research, data_science]
+      - text: "Vendor management & Project Management for study and system implementations"
+        tags: [clinical_research]
+
+  - area: "Data Management and Analysis"
+    tags: [clinical_research, data_science]
+    highlights:
+      - text: "Managed Clinical Data Management operations for more than 300 projects, from phase I PK/PD studies to multicentre trials including up to 6,000 centres and 20,000 patients"
+        tags: [clinical_research, data_science]
+      - text: "CRF and edit-check development (Rave certified, Medrio, iMednet, OpenClinica); custom functions, CRF standard library, data review and queries, reporting, data mapping and transfers, integrations, freeze/lock, UAT and validation"
+        tags: [clinical_research]
+      - text: "Line management including up to 12 direct and 50 indirect reports"
+        tags: [clinical_research, information_systems, software_engineering]
+
+  - area: "Information Systems Architecture and Engineering"
+    tags: [software_engineering, information_systems]
+    highlights:
+      - text: "User/Business/functional requirements development and management, software design and system architecture, coding (waterfall, spiral, agile), Computer System Validation (GAMP)"
+        tags: [software_engineering, information_systems]
+      - text: "Development and integration of Computerised Systems including EDC, phase I automation, data acquisition, CTMS, thesaurus coding, safety DB, Imaging, and randomisation systems"
+        tags: [software_engineering, information_systems]
+      - text: "Several 21 CFR Part 11 validations including writing plans and URS, GXP assessment, SDLC management, matrices, writing scenarios, protocols, cases, qualifications, and validation reports"
+        tags: [software_engineering, information_systems, clinical_research]
+      - text: "Active involvement in quality management systems (SOPs development, CAPA management, root cause analysis, gap analysis, remediation plans); co-led an ISO 9001:2000 certification"
+        tags: [clinical_research, software_engineering, information_systems]
+
+# ─── WORK EXPERIENCE ─────────────────────────────────────────────────────────
+
+work:
+  - name: "Avidys LLC"
+    url: null
+    position: "Owner — Freelance Clinical Research Consultant"
+    startDate: "2023"
+    endDate: "Present"
+    highlights:
+      - text: "Completed multiple remote contracts for pharmaceutical and medical device companies, ensuring compliance with industry standards"
+        tags: [clinical_research, data_science, software_engineering, information_systems]
+      - text: "Developed rationale and presentations for sample size estimates, sequential design, and futility analysis"
+        tags: [clinical_research, data_science]
+      - text: "Conducted full TLF delivery — statistical programming and analysis for a phase 3 double-blind trial and several phase I studies"
+        tags: [clinical_research, data_science]
+      - text: "Reviewed and validated databases before lock for data integrity and accuracy"
+        tags: [clinical_research]
+      - text: "Performed data science and post-hoc analyses for publication and board presentations, applying R and Python for comprehensive statistical analysis"
+        tags: [data_science, clinical_research]
+      - text: "Created data visualisations for thousands of patients (statuses, sampling management, enrolment, CRF completion) for a large post-market project in R"
+        tags: [data_science]
+      - text: "Programmed reports and graphs; developed a patient clean tracker in Python, improving data tracking efficiency"
+        tags: [data_science, software_engineering]
+      - text: "Used Jira and Git to manage Clinical Report System development and testing while maintaining version control and collaboration best practices"
+        tags: [software_engineering, information_systems]
+      - text: "Developed and reviewed requirements and specifications for systems and analyses"
+        tags: [software_engineering, information_systems]
+      - text: "Contributed to the redaction of several conference presentations and scientific papers"
+        tags: [clinical_research, data_science]
+
+  - name: "InCarda Therapeutics"
+    url: "https://www.incardatherapeutics.com"
+    position: "Director of Data Management & Biometrics"
+    startDate: "2021"
+    endDate: "2023"
+    highlights:
+      - text: "Under the SVP Clinical Development, participated in all clinical sciences activities including protocol and study document development, analysis preparation, TLF and CSR review, and writing of abstracts, posters, and papers"
+        tags: [clinical_research, data_science]
+      - text: "Provided data and biometrics leadership for all investigational and commercial products"
+        tags: [clinical_research]
+      - text: "Managed and executed the design, testing, implementation, and documentation of clinical database build activities (Phase II and Phase III pivotal studies)"
+        tags: [clinical_research, software_engineering, information_systems]
+      - text: "Oversaw CRF database implementation (Rave and Medrio), Completion Guidelines development, and RTSM implementation"
+        tags: [clinical_research]
+      - text: "Developed and reviewed several Data Management Plans"
+        tags: [clinical_research]
+      - text: "Oversaw data review activities and managed all activities leading to study database lock"
+        tags: [clinical_research]
+      - text: "Prepared Data Transfer Agreements (DTA) and oversaw development of DTA between internal Data Management staff and external data vendors"
+        tags: [clinical_research, information_systems]
+      - text: "Implemented data workflow with vendors to ensure automatic feed for data processing pipelines"
+        tags: [data_science, software_engineering, information_systems]
+      - text: "Developed Data Visualisation applications and reporting tools in R/Python for several studies"
+        tags: [data_science, software_engineering]
+      - text: "Performed several ad-hoc data and statistical analyses in R/Knitr and Python/Pandas/Jupyter/Seaborn: Sinus Rhythm conversion, AF symptoms, PK/PD analyses, Safety; using mono/multivariable regression, model fitting, logrank and Cox regression"
+        tags: [data_science, clinical_research]
+      - text: "Specified and generated statistical tables, listings, and figures"
+        tags: [clinical_research, data_science]
+      - text: "Provided programming and statistical support for several conference presentations and scientific articles"
+        tags: [clinical_research, data_science]
+
+  - name: "Corcept Therapeutics"
+    url: "https://www.corcept.com"
+    position: "Associate Director, Clinical Data Management"
+    startDate: "2020"
+    endDate: "2021"
+    highlights:
+      - text: "Responsible for 6 studies in Corcept's Cushing and metabolic programmes; delivered two study builds on time within first 3 months"
+        tags: [clinical_research]
+      - text: "Product Owner for several systems: developing user requirements, testing, vendor audits"
+        tags: [software_engineering, information_systems]
+      - text: "Led Medidata Rave and core configuration management: contract negotiation, SOP development, training, implementation; primary SME for the team"
+        tags: [clinical_research, software_engineering, information_systems]
+      - text: "CRF design, roles creation and updates, management of Rave standard library, RTSM configuration, integration of several IRT systems with Medidata and Medrio"
+        tags: [clinical_research, software_engineering]
+      - text: "Reviewed and selected tools enabling real-time data visualisation, interrogation, and reporting"
+        tags: [data_science, information_systems]
+      - text: "Developed, implemented, and validated a Biometrics Visualisation System (SpotFire, R, Python)"
+        tags: [data_science, software_engineering]
+      - text: "Managed data management service providers to ensure quality of deliverables and timelines"
+        tags: [clinical_research]
+      - text: "Ensured optimised data collection, flow, and access across EDC and non-EDC data sources"
+        tags: [clinical_research, information_systems]
+      - text: "Developed data metrics and suggested process improvements"
+        tags: [data_science, clinical_research]
+      - text: "Responsible for accuracy, completeness, and CDISC compliance of clinical databases"
+        tags: [clinical_research]
+      - text: "Managed and oversaw SAE reconciliation between clinical and pharmacovigilance databases"
+        tags: [clinical_research]
+
+  - name: "CytomX Therapeutics"
+    url: "https://cytomx.com"
+    position: "Associate Director, Clinical Data Management"
+    startDate: "2019"
+    endDate: "2020"
+    highlights:
+      - text: "Oversight of clinical data management activities across 3 oncology studies and within the department"
+        tags: [clinical_research]
+      - text: "Development and maintenance of CRF, CRF Completion Guidelines, edit-check specifications, data transfer specifications, and database audit plans"
+        tags: [clinical_research]
+      - text: "Developed Medidata Rave EDC database and Balance/RTSM randomisation and supply management system, including change controls and migrations"
+        tags: [clinical_research, software_engineering, information_systems]
+      - text: "Performed and organised cross-functional UAT of integrated clinical databases"
+        tags: [clinical_research, software_engineering]
+      - text: "Set up standard CRFs in Rave including edit checks, custom functions, and RTSM integration"
+        tags: [clinical_research, software_engineering]
+      - text: "Collaborated with clinical, biostatistics, and regulatory teams to design study documents including protocol, CRFs, and SAP"
+        tags: [clinical_research]
+      - text: "Involved in the RFP process including evaluation of potential vendors"
+        tags: [clinical_research, information_systems]
+      - text: "Developed and implemented departmental policies, standards, and process improvement initiatives"
+        tags: [clinical_research, information_systems]
+      - text: "CDM functions inspections and CRO audits"
+        tags: [clinical_research]
+
+  - name: "EORTC (European Organisation for Research and Treatment of Cancer)"
+    url: "https://www.eortc.org"
+    position: "Information Systems Manager"
+    startDate: "2016"
+    endDate: "2019"
+    highlights:
+      - text: "Led the EDC transition to Medidata Rave company-wide over 18 months: vendor selection, audit, project management, implementation, training, piloting, and production"
+        tags: [information_systems, software_engineering, clinical_research]
+      - text: "Configuration and integration with EDC of several sub-systems including Medidata RTSM, separate IRT and randomisation systems, imaging, safety gateway, and reporting systems"
+        tags: [information_systems, software_engineering, clinical_research]
+      - text: "Line management for up to six programmer-analysts, one validation specialist, and several remote resources"
+        tags: [information_systems, software_engineering]
+      - text: "Oversaw Rave custom function development, testing, and deployment"
+        tags: [software_engineering, clinical_research]
+      - text: "Led in-house development projects and vendor selection for company-wide systems"
+        tags: [information_systems, software_engineering]
+      - text: "Developed and implemented Information Systems Strategy"
+        tags: [information_systems]
+      - text: "Implemented vendor selection processes"
+        tags: [information_systems]
+      - text: "Developed custom reports using R, Business Objects, and Python"
+        tags: [data_science, software_engineering]
+      - text: "Computer System Validation following GAMP 5 for internal and external applications: URS, SRS, test protocol specification and execution, validation reports"
+        tags: [software_engineering, information_systems, clinical_research]
+      - text: "Involved in DM processes implementation including CDASH database implementation, data transfer, database migration, and standard CRFs"
+        tags: [clinical_research, information_systems]
+
+  - name: "Avidys LLC"
+    url: null
+    position: "Freelance Clinical Research Consultant"
+    startDate: "2015"
+    endDate: "2016"
+    highlights:
+      - text: "CDM Specialist at Biotronik (8 months, Zurich): three study designs and database builds in EDC based on CDASH standard; edit-check specification, implementation, and validation"
+        tags: [clinical_research, software_engineering]
+      - text: "CDISC SDTM Specialist at Business Decision Life Sciences (8 months, Brussels): SDTM mapping, MedDRA/WHODRUG coding for 2 oncology studies, listing and report generation in R, ADaM dataset review and validation, define.xml"
+        tags: [clinical_research, data_science]
+
+  - name: "Boston Scientific"
+    url: "https://www.bostonscientific.com"
+    position: "Principal Clinical Data Manager"
+    startDate: "2014"
+    endDate: "2015"
+    highlights:
+      - text: "Primary contact for several Medical Device (SCS, DBS) studies"
+        tags: [clinical_research]
+      - text: "Managed adverse event and concomitant medication coding (MedDRA, WhoDrug)"
+        tags: [clinical_research]
+      - text: "Created database specifications based on CDASH, including CRF design and edit checks"
+        tags: [clinical_research, software_engineering]
+      - text: "Developed DMP and DTP; questionnaire licensing and translation; implementation using standard CRF in Rave and Patient Cloud"
+        tags: [clinical_research]
+      - text: "Study builds in Medidata Rave using Architect; ePRO implementation on iPad"
+        tags: [clinical_research, software_engineering]
+      - text: "Migration of studies, data mapping, UAT and validation plans"
+        tags: [clinical_research, software_engineering]
+      - text: "Configured Medidata Rave batch uploader (data mapping) for several studies"
+        tags: [clinical_research, information_systems]
+      - text: "Developed and generated customised reports in R and SAS"
+        tags: [data_science]
+
+  - name: "Clinovo"
+    url: null
+    position: "Director and Senior Consultant"
+    startDate: "2012"
+    endDate: "2014"
+    highlights:
+      - text: "Responsible for all CDM, Biostatistics, SAS Programming, Medical Writing, and Project Management operations (12 clients)"
+        tags: [clinical_research, data_science]
+      - text: "EDC implementation and validation (6 new studies); Biometrics processes and deliverables (15 studies)"
+        tags: [clinical_research, software_engineering]
+      - text: "SAS programming: SDTM data mapping, clinical reports"
+        tags: [clinical_research, data_science]
+      - text: "Budget management: proposals, progress updates, and change orders"
+        tags: [clinical_research, information_systems]
+      - text: "Requirements management, testing, and validation of EDC systems; CDISC package management; automatic XML data transfer"
+        tags: [software_engineering, information_systems, clinical_research]
+      - text: "Integration of lab and external data with EDC for several studies: XML and HL7 to CDISC SDTM"
+        tags: [software_engineering, information_systems, data_science]
+      - text: "Integration of an external randomisation service through Web Services: requirements, vendor selection, specifications, follow-up on implementation"
+        tags: [software_engineering, information_systems]
+
+  - name: "Janssen (Johnson & Johnson)"
+    url: "https://www.janssenpharmaceuticals.com"
+    position: "Senior Manager, CDM"
+    startDate: "2012"
+    endDate: "2012"
+    highlights:
+      - text: "Dataset reviews and query generation and submission"
+        tags: [clinical_research]
+      - text: "Database lock activities (3 Phase III studies)"
+        tags: [clinical_research]
+      - text: "Outlier detection, data controls, query generation using Medidata Rave"
+        tags: [clinical_research, data_science]
+      - text: "SAS & R programming to detect inconsistencies in lab data and generate queries"
+        tags: [data_science, clinical_research]
+
+  - name: "Avidys LLC"
+    url: null
+    position: "Senior Software Engineer"
+    startDate: "2010"
+    endDate: "2012"
+    highlights:
+      - text: "Developed, updated, and integrated APIs for authentication, search, geolocation, and other sub-systems"
+        tags: [software_engineering]
+      - text: "Defined test strategies; evaluated and tested systems; analysed results and validated functionalities"
+        tags: [software_engineering, information_systems]
+      - text: "Wrote server-side code, developed prototypes, and deployed robust high-volume production APIs"
+        tags: [software_engineering]
+      - text: "Integrated OAuth and OpenID systems"
+        tags: [software_engineering]
+      - text: "Fixed framework bugs and improved architecture with required unit, functional, and performance testing"
+        tags: [software_engineering]
+
+  - name: "Biovail Corporation"
+    url: null
+    position: "Head of CDM and Biometrics"
+    startDate: "2007"
+    endDate: "2010"
+    highlights:
+      - text: "Responsible for all clinical data operations, biostatistics, and SAS programming"
+        tags: [clinical_research, data_science]
+      - text: "Directed lab data transfer using HL7 in Java and validation; transfer plans for several studies including up to 3 laboratories and more than 60 transfers"
+        tags: [clinical_research, software_engineering, information_systems]
+      - text: "Several vendor audits for GxP and Part 11 compliance: laboratory, data transfer, EDC systems, and data hosting"
+        tags: [clinical_research, information_systems]
+      - text: "CAPA management and multiple QA investigations including root cause analysis"
+        tags: [clinical_research, information_systems]
+      - text: "Successful EDC system implementation: vendor selection, contract negotiation, audit, customisation, SOP development, training, UAT and system validation (Oracle/SQL, ASP/Java; go-live December 2008); 50+ electronic studies"
+        tags: [software_engineering, information_systems, clinical_research]
+      - text: "Developed a SAS CDISC-compliant submission package for several NDA submissions (FDA Study Data Specifications 1.5.1) including define documentation, linked blank CRFs, SDTM and ADaM datasets"
+        tags: [clinical_research, data_science, software_engineering]
+
+  - name: "Avidys LLC"
+    url: null
+    position: "Freelance Clinical Research Consultant"
+    startDate: "2005"
+    endDate: "2007"
+    highlights:
+      - text: "EDC system implementation (CDISC-based), SOP development, System Validation/GAMP, 21 CFR Part 11 (6 months, Toronto, 2007)"
+        tags: [software_engineering, information_systems, clinical_research]
+      - text: "Customised data controls in SAS/SQL (6 months, Toronto, 2006)"
+        tags: [data_science, software_engineering]
+      - text: "CRF design, development, and printing — paper and web-based, 2 studies (Montreal, 2006)"
+        tags: [clinical_research]
+      - text: "Sponsor and investigator site audits: QA records, QA system review, Part 11 compliance, GxP, regulatory records (2005)"
+        tags: [clinical_research, information_systems]
+
+  - name: "McGill University — GEREQ"
+    url: "https://www.mcgill.ca"
+    position: "Platform Director, VP Operations and CTO"
+    startDate: "2001"
+    endDate: "2006"
+    highlights:
+      - text: "In charge of all operations including Data Management, Biometrics, compliance (ICH, GAMP, 21 CFR Part 11), and Quality Assurance"
+        tags: [clinical_research, information_systems, software_engineering]
+      - text: "Project development: setup of services, organised and trained 500 professionals across 20 investigative centres"
+        tags: [clinical_research, information_systems]
+      - text: "Line management: 6 direct reports, 50 indirect reports"
+        tags: [clinical_research, information_systems]
+      - text: "Development and implementation of an EDC, IWRS, and CDMS system based on CDISC standards"
+        tags: [software_engineering, information_systems, clinical_research]
+      - text: "Developed a full e-learning system to train site personnel in clinical research, using semantic graphs to define sections and objectives"
+        tags: [software_engineering, information_systems]
+      - text: "Launched 35 international clinical projects including 35,000 subjects"
+        tags: [clinical_research]
+      - text: "Developed 26 SOPs, implementation, and employee training"
+        tags: [clinical_research, information_systems]
+      - text: "ISO 9001:2000 certification passed in 2005; organised multiple internal and external audits"
+        tags: [clinical_research, information_systems]
+
+  - name: "ClinInfo"
+    url: null
+    position: "General Director"
+    startDate: "1998"
+    endDate: "2001"
+    highlights:
+      - text: "Founded a company offering software development and biometrics services; 12 employees; three years of positive earnings"
+        tags: [software_engineering, information_systems, clinical_research]
+      - text: "Created an EDC/IWRS/IRT system hosting the first EDC studies in France: 10,000 subjects, 2,500 centres"
+        tags: [software_engineering, information_systems]
+      - text: "Built solid customer base; annual revenue growth: 20–30%; clients included Aventis, Novartis, Novo Nordisk, 3M, Bayer, BMS, Lilly"
+        tags: [information_systems, software_engineering]
+
+  - name: "APRET / EZUS — Claude Bernard University"
+    url: "https://www.univ-lyon1.fr"
+    position: "Head of Informatics (IT and CDM)"
+    startDate: "1995"
+    endDate: "1998"
+    highlights:
+      - text: "Clinical Pharmacology Unit, Lyon, France (Pr. Jean-Pierre Boissel): setup of Clinical Data Management and IT infrastructure"
+        tags: [clinical_research, information_systems]
+      - text: "Developed and implemented procedures under ISO 9001; managed more than 250 international studies with up to 6,000 centres and 20,000 subjects per study"
+        tags: [clinical_research, information_systems]
+      - text: "Developed several disease registries using ICD-10 and SNOMED CT; managed a staff of 15"
+        tags: [clinical_research, information_systems, data_science]
+      - text: "Technical setup of the French Cochrane Centre (CIT-CCF), CRLCC Léon Bérard"
+        tags: [clinical_research, information_systems]
+
+# ─── EDUCATION ───────────────────────────────────────────────────────────────
+
+education:
+  - institution: "Claude Bernard University"
+    url: "https://www.univ-lyon1.fr"
+    area: "Public Health and Clinical Research"
+    studyType: "Doctor of Medicine (MD)"
+    location: "Lyon, France"
+
+  - institution: "Lyon I / Paris XII University"
+    url: "https://www.univ-lyon1.fr"
+    area: "Biomathematics, Clinical Informatics and Biostatistics"
+    studyType: "Master of Science (MS)"
+    location: "Lyon/Paris, France"
+
+  - institution: "Hospices Civils de Lyon (HCL)"
+    url: "https://www.chu-lyon.fr"
+    area: "Public Health and Clinical Research"
+    studyType: "Postdoctoral Residency"
+    location: "Lyon, France"
+    note: "Residency in Public Health and Clinical Research"
+
+# ─── CERTIFICATES ────────────────────────────────────────────────────────────
+
+certificates:
+  - name: "CDISC Tabulation Model (SDTM) Certification"
+    issuer: "CDISC"
+    url: "https://www.cdisc.org"
+    date: "2021-01"
+    tags: [clinical_research, data_science]
+
+  - name: "Medidata Study Builder Certification"
+    issuer: "Medidata"
+    url: "https://www.medidata.com"
+    tags: [clinical_research, software_engineering]
+
+  - name: "Medidata Study Administration Certification"
+    issuer: "Medidata"
+    url: "https://www.medidata.com"
+    tags: [clinical_research, information_systems]
+
+# ─── PUBLICATIONS ────────────────────────────────────────────────────────────
+
+publications:
+  - name: "30 peer-reviewed articles and conference presentations"
+    url: "https://scholar.google.com/citations?hl=en&user=DiQ6YWEAAAAJ"
+    note: "Cited 393 times (Google Scholar)"
+    tags: [clinical_research, data_science]
+
+# ─── SKILLS ──────────────────────────────────────────────────────────────────
+
+skills:
+  - name: "Clinical Research"
+    tags: [clinical_research]
+    keywords:
+      - "Clinical Data Management (SCDM/GCDMP)"
+      - "Clinical research processes and regulations"
+      - "Biostatistics (SAP, TLFs, CSR, DSUR)"
+      - "CDISC/SDTM (certified), CDASH, ADaM, HL7"
+      - "ICH guidelines, FDA 21 CFR Part 11, EMEA Annex 11, GAMP"
+      - "Medidata Rave (Architect & Study Builder certified)"
+      - "RTSM / IRT (Endpoint IRT, Signant IWRS)"
+      - "Medrio, eRT, iMednet, Omnicom, OpenClinica"
+      - "LOINC, NCI/CTCAE (Oncology), RECIST"
+      - "CIOMS / SuSAR (safety reporting)"
+      - "ISO 13485 (Medical Devices)"
+      - "WHO ICD-11, SNOMED CT (registries)"
+      - "Treatment allocation and supplies management"
+      - "MedDRA, WhoDrug coding"
+
+  - name: "Data Science & Statistical Programming"
+    tags: [data_science, clinical_research]
+    keywords:
+      - "Python (Pandas, NumPy, Seaborn, Plotly/Dash, Jupyter)"
+      - "R (Tidyverse, Shiny, Knitr, ggplot2)"
+      - "SAS (SDTM mapping, TLF generation)"
+      - "Statistical analysis (regression, survival, PK/PD)"
+      - "Data visualisation (SpotFire, Shiny, Dash)"
+      - "Logrank and Cox regression"
+      - "Multivariate modelling and model fitting"
+
+  - name: "Software Engineering"
+    tags: [software_engineering]
+    keywords:
+      - "Python, R, C#, Java, C, JavaScript, HTML, XML"
+      - "SQL (Oracle, MS SQL Server, MySQL, PostgreSQL)"
+      - "Firebase, REST APIs, OAuth / OpenID"
+      - "SDLC (waterfall, spiral, agile)"
+      - "Test strategy, UAT, system validation"
+      - "Selenium (web automation/testing)"
+      - "Jira, Git (version control)"
+      - "Rave custom functions and API integration"
+
+  - name: "Information Systems & Business Analysis"
+    tags: [information_systems, software_engineering]
+    keywords:
+      - "Business / functional / user requirements"
+      - "System architecture and software design"
+      - "Computer System Validation (GAMP 5)"
+      - "EDC, CTMS, IWRS, IRT system integration"
+      - "Project Management (MS Project, Jira)"
+      - "Vendor management and audits"
+      - "ISO 9001, 27001, 22237"
+      - "Quality management (SOPs, CAPA, root cause analysis)"
+      - "Bid defence and budget management"
+
+# ─── LANGUAGES ───────────────────────────────────────────────────────────────
+
+languages:
+  - language: "English"
+    fluency: "Fluent"
+  - language: "French"
+    fluency: "Native"
+
+# ─── CITIZENSHIPS (extension) ────────────────────────────────────────────────
+
+citizenships:
+  - "United States"
+  - "Canada"
+  - "France"

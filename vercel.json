@@ -1,0 +1,11 @@
+{
+  "framework": "sveltekit",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".svelte-kit/output",
+  "installCommand": "npm install",
+  "functions": {
+    "src/routes/api/cv/docx/+server.ts": {
+      "maxDuration": 15
+    }
+  }
+}
